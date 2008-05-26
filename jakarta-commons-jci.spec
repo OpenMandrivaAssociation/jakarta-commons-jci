@@ -41,7 +41,7 @@
 
 Name:           jakarta-%{base_name}
 Version:        1.0
-Release:        %mkrel 1.0.1
+Release:        %mkrel 1.0.2
 Epoch:          0
 Summary:        Commons Java Compiler Interface
 License:        Apache License 2.0
@@ -173,7 +173,7 @@ Group:          Development/Java
 Summary:        Examples for %{name}
 Group:          Development/Java
 Requires:       %{name} = %{epoch}:%{version}-%{release}
-Requires:       %{name}-compilers-eclipse = %{epoch}:%{version}-%{release}
+Requires:       %{name}-compiler-eclipse = %{epoch}:%{version}-%{release}
 Requires:       jakarta-commons-cli
 Requires:       servlet_2_4_api
 
