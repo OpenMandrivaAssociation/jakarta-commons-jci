@@ -41,7 +41,7 @@
 
 Name:           jakarta-%{base_name}
 Version:        1.0
-Release:        %mkrel 1.0.2
+Release:        %mkrel 3.0.2
 Epoch:          0
 Summary:        Commons Java Compiler Interface
 License:        Apache License 2.0
