@@ -1,0 +1,18 @@
+--- compilers/javac/src/main/java/org/apache/commons/jci/compilers/JavacClassLoader.java.sav	2008-02-06 12:10:06.000000000 +0100
++++ compilers/javac/src/main/java/org/apache/commons/jci/compilers/JavacClassLoader.java	2008-02-06 12:10:28.000000000 +0100
+@@ -33,7 +33,7 @@
+ import org.objectweb.asm.ClassWriter;
+ import org.objectweb.asm.util.CheckClassAdapter;
+ import org.vafer.dependency.asm.RenamingVisitor;
+-import org.vafer.dependency.utils.ResourceRenamer;
++import org.vafer.dependency.resources.ResourceRenamer;
+ 
+ 
+ /**
+@@ -151,4 +151,4 @@
+ 
+         return theClass;
+     }
+-}
+\ No newline at end of file
++}

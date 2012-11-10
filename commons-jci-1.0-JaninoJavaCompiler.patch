@@ -1,0 +1,33 @@
+--- compilers/janino/src/main/java/org/apache/commons/jci/compilers/JaninoJavaCompiler.java.sav0	2007-06-14 22:23:18.000000000 +0200
++++ compilers/janino/src/main/java/org/apache/commons/jci/compilers/JaninoJavaCompiler.java	2008-02-06 11:50:13.000000000 +0100
+@@ -45,7 +45,7 @@
+ import org.codehaus.janino.Scanner;
+ import org.codehaus.janino.UnitCompiler;
+ import org.codehaus.janino.WarningHandler;
+-import org.codehaus.janino.Scanner.LocatedException;
++import org.codehaus.janino.Scanner.ScanException;
+ import org.codehaus.janino.UnitCompiler.ErrorHandler;
+ import org.codehaus.janino.util.ClassFile;
+ 
+@@ -122,7 +122,7 @@
+                     types.put(pType, ic);
+                 }
+                 return ic;
+-            } catch (final LocatedException e) {
++            } catch (final ScanException e) {
+                 problems.add(new JaninoCompilationProblem(e));
+             } catch (final IOException e) {
+                 problems.add(new JaninoCompilationProblem(resourceNameFromClass, "IOException:" + e.getMessage(), true));
+@@ -148,7 +148,11 @@
+         final CompilingIClassLoader icl = new CompilingIClassLoader(pResourceReader, classFilesByName, pClassLoader);
+         for (int i = 0; i < pSourceNames.length; i++) {
+             log.debug("compiling " + pSourceNames[i]);
+-            icl.loadIClass(Descriptor.fromClassName(ConversionUtils.convertResourceToClassName(pSourceNames[i])));
++            try {
++                icl.loadIClass(Descriptor.fromClassName(ConversionUtils.convertResourceToClassName(pSourceNames[i])));
++            } catch (ClassNotFoundException e) {
++                log.error("ClassNotFoundException occured while compiling " + pSourceNames[i], e);
++            }
+         }
+         
+         // Store all fully compiled classes

@@ -1,0 +1,20 @@
+--- compilers/janino/src/main/java/org/apache/commons/jci/compilers/JaninoCompilationProblem.java.sav	2008-02-06 11:36:22.000000000 +0100
++++ compilers/janino/src/main/java/org/apache/commons/jci/compilers/JaninoCompilationProblem.java	2008-02-06 11:36:58.000000000 +0100
+@@ -19,7 +19,7 @@
+ 
+ import org.apache.commons.jci.problems.CompilationProblem;
+ import org.codehaus.janino.Location;
+-import org.codehaus.janino.Scanner.LocatedException;
++import org.codehaus.janino.Scanner.ScanException;
+ 
+ /**
+  * Janino version of a CompilationProblem
+@@ -33,7 +33,7 @@
+     private final String message;
+     private final boolean error;
+ 
+-    public JaninoCompilationProblem(final LocatedException pLocatedException) {
++    public JaninoCompilationProblem(final ScanException pLocatedException) {
+         this(pLocatedException.getLocation(), pLocatedException.getMessage(), true);
+     }
+ 

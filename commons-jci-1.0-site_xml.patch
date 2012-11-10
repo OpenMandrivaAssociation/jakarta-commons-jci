@@ -1,0 +1,14 @@
+--- src/site/site.xml.sav	2008-02-07 21:04:39.000000000 +0100
++++ src/site/site.xml	2008-02-07 21:05:49.000000000 +0100
+@@ -17,6 +17,11 @@
+    limitations under the License.
+ 
+ --><project name="Jakarta Commons JCI">
++    <skin>
++     <groupId>org.apache.maven</groupId>
++     <artifactId>maven-default-skin</artifactId>
++     <version>1.0</version>
++    </skin>
+     <bannerRight>
+         <name>Jakarta Commons JCI</name>
+         <src>jci-logo-white.png</src>
