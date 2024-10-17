@@ -45,7 +45,7 @@ Release:        %mkrel 3.0.4
 Epoch:          0
 Summary:        Commons Java Compiler Interface
 License:        Apache License 2.0
-Url:            http://commons.apache.org/jci/
+Url:            https://commons.apache.org/jci/
 Group:          Development/Java
 Source0:        http://www.apache.org/dist/commons/jci/source/commons-jci-1.0-src.tar.gz
 Source1:        %{base_name}-settings.xml
